@@ -14,5 +14,23 @@ int main(){
 	printf("welcome to a guessing game you can always win\n ");
 	printf("im thinking of a number between 1 and %d\n", upper_bound);
 	printf("you have %d guesses and I will tell you if you are high or low\n", num_guesses);
+	while(num_guesses>0){
+	printf("enter your guess: ");
+	int user_guess = 0;
+	scanf(" %d", &user_guess);
+	printf("\n");
+	if(user_guess < random_number){
+		printf("your guess is too low\n");
+		printf("you have %d guesses left\n", --num_guesses);
+		}
+	else if(user_guess > random_number){
+		printf("your guess is too high\n");
+		printf("you have %d guesses left\n", --num_guesses);	
+	}
+	
+
+	}
+
+
 	return 0;
 }
