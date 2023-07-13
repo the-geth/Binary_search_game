@@ -10,7 +10,8 @@ int main(){
 	int upper_bound = (rand()%(1000-1+1))+1;
 	int random_number = (rand()%(upper_bound-1+1))+1;
 	//log change of base formula
-	int num_guesses = (log(upper_bound)/log(2));
+	int num_guesses = (log(upper_bound)/log(2))+1;
+	int total_guesses = num_guesses;
 	printf("welcome to a guessing game you can always win\n ");
 	printf("im thinking of a number between 1 and %d\n", upper_bound);
 	printf("you have %d guesses and I will tell you if you are high or low\n", num_guesses);
@@ -18,7 +19,6 @@ int main(){
 	printf("enter your guess: ");
 	int user_guess = 0;
 	scanf(" %d", &user_guess);
-	printf("\n");
 	if(user_guess < random_number){
 		printf("your guess is too low\n");
 		printf("you have %d guesses left\n", --num_guesses);
@@ -26,9 +26,17 @@ int main(){
 	else if(user_guess > random_number){
 		printf("your guess is too high\n");
 		printf("you have %d guesses left\n", --num_guesses);	
-	}
-	
+		}
+	else{
+		--num_guesses;
+		printf("correct, the number was %d, you got it in %d tries.\n", random_number, (total_guesses-num_guesses));
+		break;
+		}	
 
+	if(num_guesses==0){
+		printf("the number was %d\n", random_number);
+		}
+	printf("\n");
 	}
 
 
