@@ -1,5 +1,4 @@
 /*this is a simple program to demonstrate how a binary search works.
- *
  * the computer will determine an upper bound and then pick a random number
  *  between it and 1. the computer will then determine the number of guesses
  *   to ensure the player always has enough to find the number, provided 
